@@ -11,6 +11,8 @@ import subprocess
 import sys
 import json
 
+from common.common import ConfigReader
+
 
 def extract_video_json(video_list):
     video_json_list = []
@@ -149,6 +151,8 @@ def valid_frame_time():
 
 
 if __name__ == '__main__':
+    # 示例：创建 ConfigReader 对象并打印配置内容
+    config_reader = ConfigReader()
     video_list = []
     # 视频数量
     video_num = 2
@@ -184,6 +188,7 @@ if __name__ == '__main__':
                 result['params'].append(param_dict)
             if i == video_num:
                 break
+
         valid_frame_time()
         quit(0)
     else:
